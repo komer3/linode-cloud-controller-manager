@@ -16,20 +16,20 @@ helm repo update ccm-linode
 
 2. Create a values file (values.yaml):
 ```yaml
-  apiToken: "your-api-token"
-  region: "us-east"
+apiToken: "your-api-token"
+region: "us-east"
 
-  # Optional: Configure route controller
-  routeController:
-    vpcNames: ""  # Comma separated VPC names
-    clusterCIDR: "10.0.0.0/8"
-    configureCloudRoutes: true
+# Optional: Configure route controller
+routeController:
+  vpcNames: ""  # Comma separated VPC names
+  clusterCIDR: "10.0.0.0/8"
+  configureCloudRoutes: true
 
-  # Optional: Configure shared IP load balancing
-  sharedIPLoadBalancing:
-    loadBalancerType: cilium-bgp
-    bgpNodeSelector: cilium-bgp-peering=true
-    ipHolderSuffix: ""
+# Optional: Configure shared IP load balancing
+sharedIPLoadBalancing:
+  loadBalancerType: cilium-bgp
+  bgpNodeSelector: cilium-bgp-peering=true
+  ipHolderSuffix: ""
 ```
 
 3. Install the CCM:
